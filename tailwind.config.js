@@ -4,9 +4,16 @@ export default {
   theme: {
     fontFamily: {
       "sans": ["Inter Variable", "sans-serif"],
-      "comfortaa": ["Comfortaa Variable", "sans-serif"],
+      "mono": ["Ubuntu Mono", "monospace"],
+      "nunito": ["Nunito Variable", "sans-serif"],
+      "quicksand": ["Quicksand Variable", "sans-serif"],
     },
-    extend: {},
+    extend: {
+      boxShadow: {
+        "button": "#4525ff 0 4px",
+        "button-down": "#4525ff 0 0",
+      }
+    },
   },
   plugins: [],
 }

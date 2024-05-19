@@ -4,7 +4,9 @@
   import type { LayoutData } from "./$types";
 
   import "@fontsource-variable/inter";
-  import "@fontsource-variable/comfortaa";
+  import "@fontsource/ubuntu-mono";
+  import "@fontsource-variable/nunito";
+  import "@fontsource-variable/quicksand";
   import "../app.css";
   import "iconify-icon";
 

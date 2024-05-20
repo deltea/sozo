@@ -9,10 +9,9 @@ export default {
       "quicksand": ["Quicksand Variable", "sans-serif"],
     },
     extend: {
-      boxShadow: {
-        "button": "#4525ff 0 4px",
-        "button-down": "#4525ff 0 0",
-      }
+      colors: {
+        "black": "#222"
+      },
     },
   },
   plugins: [],

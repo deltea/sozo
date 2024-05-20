@@ -10,15 +10,15 @@
 </script>
 
 <button
+  id="button"
+  bind:this={button}
+  on:click
+  use:cssVar={{ color, border: shadeColor(color, -35) }}
+  {...$$restProps}
   class={cn(
     "px-8 py-3 rounded-2xl text-white font-bold font-nunito tracking-wider active:translate-y-[4px] outline-none lowercase",
     className,
   )}
-  bind:this={button}
-  id="button"
-  on:click
-  use:cssVar={{ color, border: shadeColor(color, -35) }}
-  {...$$restProps}
 >
   <slot />
 </button>

@@ -20,6 +20,19 @@
 </script>
 
 <main class="flex justify-center items-center h-screen">
+  <form class="flex flex-col gap-2">
+    <Input
+      placeholder="Your email..."
+      type="email"
+    />
+  </form>
+
+  <div class="flex flex-col items-center gap-2 font-mono text-lg font-bold text-neutral-500">
+    <Separator.Root orientation="vertical" class="h-12 mx-8 w-0.5 rounded-full bg-neutral-300" />
+    <span>or</span>
+    <Separator.Root orientation="vertical" class="h-12 mx-8 w-0.5 rounded-full bg-neutral-300" />
+  </div>
+
   <div class="flex flex-col gap-3">
     <Button
       on:click={login}
@@ -39,14 +52,4 @@
       Log in with Facebook
     </Button>
   </div>
-
-  <div class="flex flex-col items-center gap-2 font-mono text-lg font-bold text-neutral-500">
-    <Separator.Root orientation="vertical" class="h-12 mx-8 w-0.5 rounded-full bg-neutral-300" />
-    <span>or</span>
-    <Separator.Root orientation="vertical" class="h-12 mx-8 w-0.5 rounded-full bg-neutral-300" />
-  </div>
-
-  <form class="flex flex-col gap-2">
-    <Input placeholder="Your email..." type="email" />
-  </form>
 </main>

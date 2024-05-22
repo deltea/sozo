@@ -10,10 +10,6 @@ body {
   @apply !bg-white opacity-20;
 }
 
-.sortable-ghost * {
-  /* @apply hidden; */
-}
-
 .sortable-drag {
   opacity: 100%;
   @apply bg-neutral-100;

@@ -32,6 +32,6 @@
   <title>Pip</title>
 </svelte:head>
 
-<div class="h-screen w-full overflow-hidden">
+<div class="h-screen w-full overflow-hidden font-nunito">
   <slot />
 </div>

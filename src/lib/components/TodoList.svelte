@@ -42,7 +42,10 @@
   bind:this={list}
   class="h-full space-y-2 overflow-y-scroll" id="list"
 >
-  {#each items as item (item.body)}
-    <TodoListItem {item} />
+  {#each items as item, index (item.body)}
+    <TodoListItem
+      {item}
+      on:delete={() => (items = items.filter((_, i) => i !== index))}
+    />
   {/each}
 </ul>

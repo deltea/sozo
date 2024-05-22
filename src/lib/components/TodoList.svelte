@@ -28,11 +28,12 @@
     Sortable.create(list, {
       animation: 150,
       forceFallback: true,
+      handle: "#handle",
       onStart: (e: Sortable.SortableEvent) => {
-        document.documentElement.style.cursor = "grabbing";
+        // document.documentElement.style.setProperty("cursor", "move", "important");
       },
       onEnd: (e: Sortable.SortableEvent) => {
-        document.documentElement.style.cursor = "auto";
+        // document.documentElement.style.setProperty("cursor", "auto");
       }
     });
   });
@@ -40,7 +41,8 @@
 
 <ul
   bind:this={list}
-  class="h-full space-y-2 overflow-y-scroll" id="list"
+  id="list"
+  class="h-full space-y-2 overflow-y-scroll relative"
 >
   {#each items as item, index (item.body)}
     <TodoListItem

@@ -3,6 +3,8 @@
   import { scale, slide } from "svelte/transition";
   import { createEventDispatcher } from "svelte";
 
+  import Button from "$components/Button.svelte";
+
   export let item: any;
 
   const dispatch = createEventDispatcher();
@@ -33,14 +35,13 @@
   }
 </script>
 
-<li
-  transition:slide={{ duration: 150, axis: "y" }}
+<!-- transition:slide={{ duration: 150, axis: "y" }} -->
+<Button
+  element="li"
+  shadowSize="3px"
   class={cn(
-    "rounded-2xl bg-white px-4 h-12 flex justify-between items-center w-96 hover:bg-neutral-100",
+    "rounded-2xl px-4 h-12 flex justify-between items-center w-96 text-black font-semibold cursor-default",
     { "text-opacity-20": checked },
-    // { "border-[3.5px] border-dashed border-amber-400": unsure },
-    // { "font-bold text-red-400": important },
-    // { "border-red-400": important && unsure }
   )}
 >
   <div class="flex items-center gap-2 h-full w-[80%]">
@@ -59,6 +60,7 @@
     <input
       bind:value={value}
       on:keydown={keydown}
+      placeholder="..."
       class={cn(
         "text-ellipsis w-full whitespace-nowrap overflow-hidden bg-inherit outline-none",
         { "line-through": checked }
@@ -66,21 +68,30 @@
     />
   </div>
 
-  <div class="flex gap-2 items-center">
+  <div class="flex gap-2 items-center h-full">
     {#if important}
-      <button
+      <Button
         on:click={() => (important = !important)}
-        transition:scale={{ duration: 150 }}
-        class="rounded-lg bg-red-400 text-white aspect-square size-6 flex items-center justify-center font-mono text-base font-semibold duration-150 hover:scale-110 active:scale-100"
-      >!</button>
+        shadowSize="0px"
+        color="#f87171"
+        class="rounded-lg text-white p-0 aspect-square h-6 flex items-center justify-center font-mono text-base font-semibold"
+      >!</Button>
     {/if}
 
     {#if unsure}
-      <button
+      <Button
         on:click={() => (unsure = !unsure)}
-        transition:scale={{ duration: 150 }}
-        class="rounded-lg bg-amber-400 text-white aspect-square size-6 flex items-center justify-center font-mono text-base font-semibold duration-150 hover:scale-110 active:scale-100"
-      >?</button>
+        color="#fbbf24"
+        shadowSize="0px"
+        class="rounded-lg text-white p-0 aspect-square h-6 flex items-center justify-center font-mono text-base font-semibold"
+      >?</Button>
     {/if}
+
+    <button
+      class="font-black text-neutral-400 h-full block"
+      id="handle"
+    >
+      ---
+    </button>
   </div>
-</li>
+</Button>

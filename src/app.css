@@ -7,9 +7,18 @@ body {
 }
 
 .sortable-ghost {
-  @apply bg-neutral-400 text-neutral-400;
+  @apply !bg-white opacity-20;
+}
+
+.sortable-ghost * {
+  /* @apply hidden; */
 }
 
 .sortable-drag {
   opacity: 100%;
+  @apply bg-neutral-100;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }

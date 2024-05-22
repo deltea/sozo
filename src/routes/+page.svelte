@@ -1,7 +1,6 @@
 <script lang="ts">
   import type { PageData } from "./$types";
 
-	import Button from "$components/Button.svelte";
   import TodoList from "$components/TodoList.svelte";
 
   export let data: PageData;

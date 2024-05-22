@@ -23,12 +23,17 @@
   ];
 
   let list: HTMLUListElement;
-  let sortable;
 
   onMount(() => {
-    sortable = Sortable.create(list, {
+    Sortable.create(list, {
       animation: 150,
       forceFallback: true,
+      onStart: (e: Sortable.SortableEvent) => {
+        document.documentElement.style.cursor = "grabbing";
+      },
+      onEnd: (e: Sortable.SortableEvent) => {
+        document.documentElement.style.cursor = "auto";
+      }
     });
   });
 </script>

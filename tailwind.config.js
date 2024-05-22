@@ -12,6 +12,9 @@ export default {
       colors: {
         "black": "#222"
       },
+      borderWidth: {
+        "3": "3.5px"
+      }
     },
   },
   plugins: [],

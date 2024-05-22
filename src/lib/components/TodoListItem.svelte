@@ -4,11 +4,16 @@
   export let item: any;
 
   let checked = false;
+  let important = true;
+  let unsure = true;
 </script>
 
 <li class={cn(
   "rounded-2xl bg-white px-4 h-12 flex justify-between items-center w-96 hover:bg-neutral-100",
-  { "text-opacity-20": checked }
+  { "text-opacity-20": checked },
+  { "border-[3.5px] border-dashed border-amber-400": unsure },
+  { "font-bold text-red-400": important },
+  { "border-red-400": important && unsure }
 )}>
   <div class="flex items-center gap-2 h-full w-[80%]">
     <button
@@ -31,13 +36,24 @@
   </div>
 
   <div class="flex gap-2 items-center">
-    <div class="rounded-lg bg-red-500 text-white aspect-square size-6 flex items-center justify-center font-mono text-base">
-      <!-- <iconify-icon icon="material-symbols:exclamation-rounded" class="text-base"></iconify-icon> -->
-      !
-    </div>
-    <div class="rounded-lg bg-amber-500 text-white aspect-square size-6 flex items-center justify-center font-mono text-base">
-      <!-- <iconify-icon icon="material-symbols:exclamation-rounded" class="text-base"></iconify-icon> -->
-      ?
-    </div>
+    {#if important}
+      <button
+        on:click={() => (important = !important)}
+        class="rounded-lg bg-red-400 text-white aspect-square size-6 flex items-center justify-center font-mono text-base font-semibold"
+      >
+        <!-- <iconify-icon icon="material-symbols:exclamation-rounded" class="text-base font-semibold"></iconify-icon> -->
+        !
+      </button>
+    {/if}
+
+    {#if unsure}
+      <button
+        on:click={() => (unsure = !unsure)}
+        class="rounded-lg bg-amber-400 text-white aspect-square size-6 flex items-center justify-center font-mono text-base font-semibold"
+      >
+        <!-- <iconify-icon icon="material-symbols:exclamation-rounded" class="text-base font-semibold"></iconify-icon> -->
+        ?
+      </button>
+    {/if}
   </div>
 </li>

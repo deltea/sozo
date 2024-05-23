@@ -1,6 +1,6 @@
 <script lang="ts">
   import { currentTheme } from "$lib/stores";
-  import { hslToHex } from "$lib/utils";
+  import { hslToHex, toast } from "$lib/utils";
   import { Slider } from "bits-ui";
 
   import Button from "$components/Button.svelte";
@@ -10,6 +10,7 @@
 
   function copyTheme() {
     navigator.clipboard.writeText($currentTheme);
+    toast("Color copied!", $currentTheme);
   }
 </script>
 

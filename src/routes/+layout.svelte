@@ -1,7 +1,8 @@
 <script lang="ts">
+  import type { LayoutData } from "./$types";
 	import { invalidate } from "$app/navigation";
 	import { onMount } from "svelte";
-  import type { LayoutData } from "./$types";
+  import { Toaster } from "svelte-french-toast";
 
   import "@fontsource-variable/inter";
   import "@fontsource/ubuntu-mono";
@@ -35,3 +36,5 @@
 <div class="h-screen w-full overflow-hidden font-nunito">
   <slot />
 </div>
+
+<Toaster />

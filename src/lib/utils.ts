@@ -1,5 +1,7 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import frenchToast from "svelte-french-toast";
+import { currentTheme } from "./stores";
 
 export function cn(...values: ClassValue[]) {
   return twMerge(clsx(values));
@@ -49,4 +51,14 @@ export function hslToHex(h: number, s: number, l: number) {
     return Math.round(255 * color).toString(16).padStart(2, '0');
   };
   return `#${f(0)}${f(8)}${f(4)}`;
+}
+
+export function toast(message: string, color: string) {
+  frenchToast.success(message, {
+    iconTheme: {
+      primary: color,
+      secondary: "#fff"
+    },
+    style: "box-shadow: none; border-width: 2px; border-radius: 16px; padding: 8px 12px; font-family: 'Nunito Variable'"
+  });
 }

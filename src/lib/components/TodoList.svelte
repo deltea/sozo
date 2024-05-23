@@ -5,21 +5,21 @@
   import TodoListItem from "$components/TodoListItem.svelte";
 
   let items = [
-    { body: "Stuff 1" },
-    { body: "Stuff 2" },
-    { body: "Stuff 3" },
-    { body: "Stuff 4" },
-    { body: "Stuff 5" },
-    { body: "Stuff 6" },
-    { body: "Stuff 7" },
-    { body: "Stuff 8" },
-    { body: "Stuff 9" },
-    { body: "Stuff 10" },
-    { body: "Stuff 11" },
-    { body: "Stuff 12" },
-    { body: "Stuff 13" },
-    { body: "Stuff 14" },
-    { body: "Stuff 151515151515151515151515151515151515151515" },
+    { body: "Babooka", checked: true },
+    { body: "Wahoo, let's a-go", checked: true },
+    { body: "Just do it.", checked: true },
+    { body: "Take the dog out" },
+    { body: "Epic todo list item" },
+    { body: "wow, amazing" },
+    { body: "hehe." },
+    { body: "ooooooooooooooooooooooooooooooooo" },
+    { body: "cool colors" },
+    { body: "this is cool" },
+    { body: "do stuff i'm supposed to do" },
+    { body: "Do stuff" },
+    { body: "Finish the thing" },
+    { body: "Make the stuff" },
+    { body: "fun" },
   ];
 
   let list: HTMLUListElement;
@@ -48,6 +48,7 @@
     <TodoListItem
       {item}
       on:delete={() => (items = items.filter((_, i) => i !== index))}
+      checked={item.checked}
     />
   {/each}
 </ul>

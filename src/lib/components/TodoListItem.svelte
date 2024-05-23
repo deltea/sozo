@@ -1,20 +1,18 @@
 <script lang="ts">
   import { cn } from "$lib/utils";
-  import { scale, slide } from "svelte/transition";
   import { createEventDispatcher } from "svelte";
 
   import Button from "$components/Button.svelte";
-    import { currentTheme } from "$lib/stores";
+  import { currentTheme } from "$lib/stores";
 
   export let item: any;
+  export let checked = false;
+  export let important = false;
+  export let unsure = false;
 
   const dispatch = createEventDispatcher();
 
   let value: string = item.body;
-
-  let checked = false;
-  let important = false;
-  let unsure = false;
 
   function keydown(e: KeyboardEvent) {
     if (e.key === "Enter") {
@@ -39,9 +37,9 @@
 <!-- transition:slide={{ duration: 150, axis: "y" }} -->
 <Button
   element="li"
-  shadowSize="2px"
+  shadowSize="3px"
   class={cn(
-    "item rounded-2xl px-4 h-12 flex justify-between items-center w-96 text-black font-semibold",
+    "item rounded-2xl px-4 h-12 flex justify-between items-center w-96 text-black",
     { "text-opacity-20": checked },
   )}
 >
@@ -64,7 +62,7 @@
       on:keydown={keydown}
       placeholder="..."
       class={cn(
-        "text-ellipsis w-full whitespace-nowrap overflow-hidden bg-inherit outline-none",
+        "text-ellipsis w-full whitespace-nowrap overflow-hidden bg-inherit outline-none font-medium",
         { "line-through": checked }
       )}
     />

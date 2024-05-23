@@ -11,12 +11,14 @@
     borderWidth?: string;
     shadowSize?: string;
     element?: string;
+    animation?: boolean;
   };
 
   export let color = "#ffffff";
   export let borderWidth = "2px";
   export let shadowSize = "4px";
   export let element = "button";
+  export let animation = true;
 
   let button: HTMLButtonElement;
 </script>
@@ -28,11 +30,18 @@
   tabindex="0"
   bind:this={button}
   on:click
-  use:cssVar={{ color, shadowSize, borderWidth, border: shadeColor(color, -35) }}
   transition:scale={{ duration: 150 }}
   {...$$restProps}
+  use:cssVar={{
+    color,
+    shadowSize,
+    borderWidth,
+    border: shadeColor(color, -35),
+    activeTranslate: animation ? shadowSize : "0",
+    activeShadowSize: animation ? "0" : shadowSize,
+  }}
   class={cn(
-    "px-8 py-3 rounded-2xl text-white font-bold font-nunito tracking-wider outline-none lowercase",
+    "px-8 py-3 rounded-2xl text-white font-nunito tracking-wider outline-none lowercase",
     className,
   )}
 >
@@ -48,7 +57,7 @@
   }
 
   #button:active {
-    box-shadow: var(--border) 0 0;
-    translate: 0 var(--shadowSize);
+    box-shadow: var(--border) 0 var(--activeShadowSize);
+    translate: 0 var(--activeTranslate);
   }
 </style>

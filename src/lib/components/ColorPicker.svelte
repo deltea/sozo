@@ -5,7 +5,7 @@
 
   import Button from "$components/Button.svelte";
 
-  let value: number[] = [50];
+  let value: number[] = [0];
   $: currentTheme.set(hslToHex(value[0], 80, 70));
 
   function copyTheme() {
@@ -16,7 +16,8 @@
 
 <Button
   element="div"
-  shadowSize="0px"
+  shadowSize="3px"
+  animation={false}
   class="w-60 cursor-auto p-6 flex flex-col items-center justify-center gap-6"
 >
   <Button

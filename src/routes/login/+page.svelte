@@ -36,8 +36,8 @@
   <div class="flex flex-col gap-3">
     <Button
       on:click={login}
-      class="flex items-center gap-2 font-nunito"
-      color="#ff0000"
+      class="flex items-center gap-2 font-bold"
+      color="#eb4747"
     >
       <iconify-icon icon="carbon:logo-google" class="text-lg"></iconify-icon>
       Log in with Google
@@ -45,8 +45,8 @@
 
     <Button
       on:click={login}
-      class="flex items-center gap-2 font-nunito"
-      color="#207bf3"
+      class="flex items-center gap-2 font-bold"
+      color="#207cf3"
     >
       <iconify-icon icon="mingcute:facebook-fill" class="text-lg"></iconify-icon>
       Log in with Facebook

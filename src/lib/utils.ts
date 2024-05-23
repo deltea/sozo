@@ -1,7 +1,6 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import frenchToast from "svelte-french-toast";
-import { currentTheme } from "./stores";
 
 export function cn(...values: ClassValue[]) {
   return twMerge(clsx(values));

@@ -29,10 +29,12 @@
         e.preventDefault();
         item.body = item.body.replace("!", "");
         item.important = !item.important;
+        dispatch("important");
       } else if (item.body.startsWith("?") || item.body.endsWith("?")) {
         e.preventDefault();
         item.body = item.body.replace("?", "");
         item.unsure = !item.unsure;
+        dispatch("unsure");
       }
     } else if (e.key === "Backspace" && item.body.length === 0 || e.key === "Delete") {
       dispatch("delete");

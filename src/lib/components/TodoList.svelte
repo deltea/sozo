@@ -7,30 +7,29 @@
   import TodoListItem from "$components/TodoListItem.svelte";
 
   let items = [
-    { body: "Babooka", checked: true },
-    { body: "Wahoo, let's a-go", checked: true },
-    { body: "Just do it.", checked: true },
-    { body: "Take the dog out" },
-    { body: "Epic todo list item" },
-    { body: "wow, amazing" },
-    { body: "hehe." },
-    { body: "poqjfelkjalskdnljfjiwojqpoiefjwjfopqioewpqijpouehfihqw" },
-    { body: "cool colors" },
-    { body: "this is cool" },
-    { body: "do stuff i'm supposed to do" },
-    { body: "Do stuff" },
-    { body: "Finish the thing" },
-    { body: "Make the stuff" },
-    { body: "fun" },
+    { body: "Babooka", checked: true, important: false },
+    { body: "Wahoo, let's a-go", checked: true, important: false },
+    { body: "Just do it.", checked: true, important: false },
+    { body: "Take the dog out", important: false },
+    { body: "Epic todo list item", important: false },
+    { body: "wow, amazing", important: false },
+    { body: "hehe.", important: false },
+    { body: "poqjfelkjalskdnljfjiwojqpoiefjwjfopqioewpqijpouehfihqw", important: false },
+    { body: "cool colors", important: false },
+    { body: "this is cool", important: false },
+    { body: "do stuff i'm supposed to do", important: false },
+    { body: "Do stuff", important: false },
+    { body: "Finish the thing", important: false },
+    { body: "Make the stuff", important: false },
+    { body: "fun", important: false },
   ];
 
   let list: HTMLUListElement;
   let autoSort = true;
 
   function order() {
-    items = items.toSorted((a, b) => {
-      return (a.checked?1:-1) - (b.checked?1:-1)
-    });
+    items = items.toSorted((a, b) => (b.important?1:-1) - (a.important?1:-1));
+    items = items.toSorted((a, b) => (a.checked?1:-1) - (b.checked?1:-1));
   }
 
   onMount(() => {
@@ -63,6 +62,7 @@
         handle={!autoSort}
         on:delete={() => (items = items.filter((_, i) => i !== index))}
         on:checked={autoSort && order}
+        on:important={autoSort && order}
       />
     </li>
   {/each}

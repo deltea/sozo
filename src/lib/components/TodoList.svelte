@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import Sortable from "sortablejs";
+  import { currentTheme } from "$lib/stores";
 
   import TodoListItem from "$components/TodoListItem.svelte";
 
@@ -42,7 +43,8 @@
 <ul
   bind:this={list}
   id="list"
-  class="h-full space-y-2 overflow-y-scroll py-2 focus:bg-red-500"
+  class="h-full space-y-2 overflow-y-scroll border-3 rounded-3xl p-4"
+  style:border-color={$currentTheme}
 >
   {#each items as item, index (item.body)}
     <TodoListItem

@@ -27,7 +27,7 @@
     />
   </form>
 
-  <div class="flex flex-col items-center gap-2 font-mono text-lg font-bold text-neutral-500">
+  <div class="flex flex-col items-center gap-2 font-mono text-lg font-bold text-neutral-400">
     <Separator.Root orientation="vertical" class="h-12 mx-8 w-0.5 rounded-full bg-neutral-300" />
     <span>or</span>
     <Separator.Root orientation="vertical" class="h-12 mx-8 w-0.5 rounded-full bg-neutral-300" />

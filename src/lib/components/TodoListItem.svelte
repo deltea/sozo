@@ -53,7 +53,7 @@
     <button
       on:click={onChecked}
       class={cn(
-        "border-3 rounded-full aspect-square size-5 flex items-center justify-center duration-150 hover:scale-110 active:scale-100"
+        "border-3 rounded-lg aspect-square size-5 flex items-center justify-center duration-150 hover:scale-110 active:scale-100"
       )}
       style:background-color={item.checked ? $currentTheme : "white"}
       style:border-color={$currentTheme}
@@ -79,9 +79,10 @@
       {#if item.important}
         <Button
           on:click={() => (item.important = !item.important)}
-          shadowSize="0px"
+          shadowSize="0"
+          borderWidth="0"
           color="#f87171"
-          class="rounded-lg text-white p-0 aspect-square size-6 flex items-center justify-center font-mono text-base font-semibold"
+          class="rounded-full text-white p-0 aspect-square size-[22px] flex items-center justify-center font-mono text-sm font-semibold"
         >!</Button>
       {/if}
 
@@ -89,8 +90,9 @@
         <Button
           on:click={() => (item.unsure = !item.unsure)}
           color="#fbbf24"
-          shadowSize="0px"
-          class="rounded-lg text-white p-0 aspect-square size-6 flex items-center justify-center font-mono text-base font-semibold"
+          shadowSize="0"
+          borderWidth="0"
+          class="rounded-full text-white p-0 aspect-square size-[22px] flex items-center justify-center font-mono text-sm font-semibold"
         >?</Button>
       {/if}
     </div>

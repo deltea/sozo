@@ -39,11 +39,11 @@
   element="li"
   shadowSize="3px"
   class={cn(
-    "item rounded-2xl px-4 h-12 flex justify-between items-center w-96 text-black",
+    "item rounded-2xl px-4 h-12 flex justify-between items-center w-96 text-black gap-2",
     { "text-opacity-20": checked },
   )}
 >
-  <div class="flex items-center gap-2 h-full w-[80%]">
+  <div class="flex items-center gap-2 h-full flex-grow">
     <button
       on:click={() => (checked = !checked)}
       class={cn(
@@ -69,23 +69,24 @@
   </div>
 
   <div class="flex gap-2 items-center h-full">
-    {#if important}
-      <Button
-        on:click={() => (important = !important)}
-        shadowSize="0px"
-        color="#f87171"
-        class="rounded-lg text-white p-0 aspect-square size-6 flex items-center justify-center font-mono text-base font-semibold"
-      >!</Button>
-    {/if}
-
-    {#if unsure}
-      <Button
-        on:click={() => (unsure = !unsure)}
-        color="#fbbf24"
-        shadowSize="0px"
-        class="rounded-lg text-white p-0 aspect-square size-6 flex items-center justify-center font-mono text-base font-semibold"
-      >?</Button>
-    {/if}
+    <div class="flex gap-1">
+      {#if important}
+        <Button
+          on:click={() => (important = !important)}
+          shadowSize="0px"
+          color="#f87171"
+          class="rounded-lg text-white p-0 aspect-square size-6 flex items-center justify-center font-mono text-base font-semibold"
+        >!</Button>
+      {/if}
+      {#if unsure}
+        <Button
+          on:click={() => (unsure = !unsure)}
+          color="#fbbf24"
+          shadowSize="0px"
+          class="rounded-lg text-white p-0 aspect-square size-6 flex items-center justify-center font-mono text-base font-semibold"
+        >?</Button>
+      {/if}
+    </div>
 
     <!-- svelte-ignore a11y-mouse-events-have-key-events -->
     <button

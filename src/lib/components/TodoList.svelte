@@ -13,7 +13,7 @@
     { body: "Epic todo list item" },
     { body: "wow, amazing" },
     { body: "hehe." },
-    { body: "ooooooooooooooooooooooooooooooooo" },
+    { body: "poqjfelkjalskdnljfjiwojqpoiefjwjfopqioewpqijpouehfihqw" },
     { body: "cool colors" },
     { body: "this is cool" },
     { body: "do stuff i'm supposed to do" },

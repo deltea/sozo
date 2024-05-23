@@ -7,12 +7,12 @@ body {
 }
 
 .sortable-ghost {
+  cursor: inherit;
   @apply !bg-white opacity-20;
 }
 
-.sortable-drag {
-  opacity: 100%;
-  @apply bg-neutral-100;
+.sortable-ghost * {
+  cursor: inherit;
 }
 
 ::-webkit-scrollbar {

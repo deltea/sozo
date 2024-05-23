@@ -30,10 +30,10 @@
       forceFallback: true,
       handle: "#handle",
       onStart: (e: Sortable.SortableEvent) => {
-        // document.documentElement.style.setProperty("cursor", "move", "important");
+        document.body.style.setProperty("cursor", "grabbing", "important");
       },
       onEnd: (e: Sortable.SortableEvent) => {
-        // document.documentElement.style.setProperty("cursor", "auto");
+        document.body.style.setProperty("cursor", "auto");
       }
     });
   });
@@ -42,7 +42,7 @@
 <ul
   bind:this={list}
   id="list"
-  class="h-full space-y-2 overflow-y-scroll relative"
+  class="h-full space-y-2 overflow-y-scroll py-2 focus:bg-red-500"
 >
   {#each items as item, index (item.body)}
     <TodoListItem

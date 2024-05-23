@@ -8,11 +8,13 @@
   interface $$Props extends HTMLButtonAttributes {
     class?: string;
     color?: string;
+    borderWidth?: string;
     shadowSize?: string;
     element?: string;
   };
 
   export let color = "#ffffff";
+  export let borderWidth = "2px";
   export let shadowSize = "4px";
   export let element = "button";
 
@@ -26,7 +28,7 @@
   tabindex="0"
   bind:this={button}
   on:click
-  use:cssVar={{ color, shadowSize, border: shadeColor(color, -35) }}
+  use:cssVar={{ color, shadowSize, borderWidth, border: shadeColor(color, -35) }}
   transition:scale={{ duration: 150 }}
   {...$$restProps}
   class={cn(
@@ -40,7 +42,7 @@
 <style>
   #button {
     background-color: var(--color);
-    border-width: 2px;
+    border-width: var(--borderWidth);
     border-color: var(--border);
     box-shadow: var(--border) 0 var(--shadowSize);
   }

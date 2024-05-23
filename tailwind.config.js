@@ -13,7 +13,7 @@ export default {
         "black": "#222"
       },
       borderWidth: {
-        "3": "3.5px"
+        "3": "3px"
       }
     },
   },

@@ -40,7 +40,7 @@
   element="li"
   shadowSize="3px"
   class={cn(
-    "rounded-2xl px-4 h-12 flex justify-between items-center w-96 text-black font-semibold cursor-default",
+    "item rounded-2xl px-4 h-12 flex justify-between items-center w-96 text-black font-semibold",
     { "text-opacity-20": checked },
   )}
 >
@@ -48,12 +48,12 @@
     <button
       on:click={() => (checked = !checked)}
       class={cn(
-        "border-2 border-blue-400 rounded-full aspect-square w-5 flex items-center justify-center duration-150 hover:scale-110 active:scale-100",
+        "border-3 border-blue-400 rounded-full aspect-square size-5 flex items-center justify-center duration-150 hover:scale-110 active:scale-100",
         { "bg-blue-400": checked }
       )}
     >
       {#if checked}
-        <iconify-icon icon="mingcute:check-fill" class="text-[10px] text-white"></iconify-icon>
+        <iconify-icon icon="mdi:check-bold" class="text-[12px] text-white"></iconify-icon>
       {/if}
     </button>
 
@@ -62,7 +62,7 @@
       on:keydown={keydown}
       placeholder="..."
       class={cn(
-        "text-ellipsis w-full whitespace-nowrap overflow-hidden bg-inherit outline-none",
+        "text-ellipsis w-full whitespace-nowrap overflow-hidden bg-inherit outline-none selection:bg-blue-400",
         { "line-through": checked }
       )}
     />
@@ -74,7 +74,7 @@
         on:click={() => (important = !important)}
         shadowSize="0px"
         color="#f87171"
-        class="rounded-lg text-white p-0 aspect-square h-6 flex items-center justify-center font-mono text-base font-semibold"
+        class="rounded-lg text-white p-0 aspect-square size-6 flex items-center justify-center font-mono text-base font-semibold"
       >!</Button>
     {/if}
 
@@ -83,15 +83,16 @@
         on:click={() => (unsure = !unsure)}
         color="#fbbf24"
         shadowSize="0px"
-        class="rounded-lg text-white p-0 aspect-square h-6 flex items-center justify-center font-mono text-base font-semibold"
+        class="rounded-lg text-white p-0 aspect-square size-6 flex items-center justify-center font-mono text-base font-semibold"
       >?</Button>
     {/if}
 
+    <!-- svelte-ignore a11y-mouse-events-have-key-events -->
     <button
-      class="font-black text-neutral-400 h-full block"
+      class="handle font-black text-neutral-400 h-full block w-6 cursor-grab"
       id="handle"
     >
-      ---
+      <iconify-icon icon="mingcute:menu-fill" class="text-xl"></iconify-icon>
     </button>
   </div>
 </Button>

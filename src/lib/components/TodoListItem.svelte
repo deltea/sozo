@@ -68,7 +68,7 @@
       on:keydown={keydown}
       placeholder="..."
       class={cn(
-        "text-ellipsis w-full whitespace-nowrap overflow-hidden bg-inherit outline-none font-medium",
+        "text-ellipsis w-full whitespace-nowrap overflow-hidden bg-inherit outline-none font-medium text-sm",
         { "line-through": item.checked }
       )}
     />

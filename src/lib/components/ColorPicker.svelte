@@ -7,6 +7,10 @@
 
   let value: number[] = [50];
   $: currentTheme.set(hslToHex(value[0], 80, 70));
+
+  function copyTheme() {
+    navigator.clipboard.writeText($currentTheme);
+  }
 </script>
 
 <Button
@@ -15,11 +19,10 @@
   class="w-60 cursor-auto p-6 flex flex-col items-center justify-center gap-6"
 >
   <Button
-    element="input"
-    value={$currentTheme}
     class="h-12 w-full flex justify-center items-center uppercase font-mono text-center"
     color={$currentTheme}
-  />
+    on:click={copyTheme}
+  >{$currentTheme}</Button>
 
   <Slider.Root
     min={0}

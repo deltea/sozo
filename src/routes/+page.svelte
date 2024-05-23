@@ -14,7 +14,7 @@
   }
 </script>
 
-<main class="p-8 flex flex-col justify-evenly items-center h-full gap-4">
-  <ColorPicker />
+<main class="p-8 flex justify-evenly items-center h-full gap-4">
   <TodoList />
+  <ColorPicker />
 </main>

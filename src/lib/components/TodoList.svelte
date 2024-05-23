@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import Sortable from "sortablejs";
   import { currentTheme } from "$lib/stores";
+  import { flip } from "svelte/animate";
 
   import TodoListItem from "$components/TodoListItem.svelte";
 
@@ -24,6 +25,13 @@
   ];
 
   let list: HTMLUListElement;
+  let autoSort = true;
+
+  function order() {
+    items = items.toSorted((a, b) => {
+      return (a.checked?1:-1) - (b.checked?1:-1)
+    });
+  }
 
   onMount(() => {
     Sortable.create(list, {
@@ -35,8 +43,10 @@
       },
       onEnd: (e: Sortable.SortableEvent) => {
         document.body.style.setProperty("cursor", "auto");
-      }
+      },
     });
+
+    order();
   });
 </script>
 
@@ -47,10 +57,13 @@
   style:border-color={$currentTheme}
 >
   {#each items as item, index (item.body)}
-    <TodoListItem
-      {item}
-      on:delete={() => (items = items.filter((_, i) => i !== index))}
-      checked={item.checked}
-    />
+    <li animate:flip={{ duration: 200 }} class="block">
+      <TodoListItem
+        {item}
+        handle={!autoSort}
+        on:delete={() => (items = items.filter((_, i) => i !== index))}
+        on:checked={autoSort && order}
+      />
+    </li>
   {/each}
 </ul>

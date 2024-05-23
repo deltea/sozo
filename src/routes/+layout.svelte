@@ -30,7 +30,7 @@
 </script>
 
 <svelte:head>
-  <title>Pip</title>
+  <title>Sozo</title>
 </svelte:head>
 
 <div class="h-screen w-full overflow-hidden font-nunito">

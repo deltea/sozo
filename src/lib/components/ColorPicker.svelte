@@ -16,7 +16,7 @@
 
 <Button
   element="div"
-  shadowSize="3px"
+  shadowSize="4px"
   animation={false}
   class="w-60 cursor-auto p-6 flex flex-col items-center justify-center gap-6"
 >

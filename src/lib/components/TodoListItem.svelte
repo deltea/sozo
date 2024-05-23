@@ -4,6 +4,7 @@
   import { createEventDispatcher } from "svelte";
 
   import Button from "$components/Button.svelte";
+    import { currentTheme } from "$lib/stores";
 
   export let item: any;
 
@@ -38,7 +39,7 @@
 <!-- transition:slide={{ duration: 150, axis: "y" }} -->
 <Button
   element="li"
-  shadowSize="3px"
+  shadowSize="2px"
   class={cn(
     "item rounded-2xl px-4 h-12 flex justify-between items-center w-96 text-black font-semibold",
     { "text-opacity-20": checked },
@@ -48,9 +49,10 @@
     <button
       on:click={() => (checked = !checked)}
       class={cn(
-        "border-3 border-blue-400 rounded-full aspect-square size-5 flex items-center justify-center duration-150 hover:scale-110 active:scale-100",
-        { "bg-blue-400": checked }
+        "border-3 rounded-full aspect-square size-5 flex items-center justify-center duration-150 hover:scale-110 active:scale-100"
       )}
+      style:background-color={checked ? $currentTheme : "white"}
+      style:border-color={$currentTheme}
     >
       {#if checked}
         <iconify-icon icon="mdi:check-bold" class="text-[12px] text-white"></iconify-icon>
@@ -62,7 +64,7 @@
       on:keydown={keydown}
       placeholder="..."
       class={cn(
-        "text-ellipsis w-full whitespace-nowrap overflow-hidden bg-inherit outline-none selection:bg-blue-400",
+        "text-ellipsis w-full whitespace-nowrap overflow-hidden bg-inherit outline-none",
         { "line-through": checked }
       )}
     />

@@ -2,6 +2,7 @@
   import type { PageData } from "./$types";
 
   import TodoList from "$components/TodoList.svelte";
+  import ColorPicker from "$components/ColorPicker.svelte";
 
   export let data: PageData;
   let { supabase } = data;
@@ -13,6 +14,7 @@
   }
 </script>
 
-<div class="p-8 flex justify-center items-center space-y-4 h-full w-full">
+<div class="p-8 flex justify-evenly items-center space-y-4 h-full w-full">
   <TodoList />
+  <ColorPicker />
 </div>

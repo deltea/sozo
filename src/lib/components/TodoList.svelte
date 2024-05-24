@@ -61,8 +61,7 @@
         {item}
         handle={!autoSort}
         on:delete={() => (items = items.filter((_, i) => i !== index))}
-        on:checked={autoSort && order}
-        on:important={autoSort && order}
+        on:change={autoSort ? order : () => {}}
       />
     </li>
   {/each}

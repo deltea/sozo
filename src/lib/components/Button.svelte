@@ -5,14 +5,15 @@
 
   let className = "";
   export { className as class };
-  interface $$Props extends HTMLButtonAttributes {
-    class?: string;
-    color?: string;
-    borderWidth?: string;
-    shadowSize?: string;
-    element?: string;
-    animation?: boolean;
-  };
+
+  // interface $$Props extends HTMLButtonAttributes {
+  //   class?: string;
+  //   color?: string;
+  //   borderWidth?: string;
+  //   shadowSize?: string;
+  //   element?: string;
+  //   animation?: boolean;
+  // };
 
   export let color = "#ffffff";
   export let borderWidth = "2px";
@@ -20,7 +21,7 @@
   export let element = "button";
   export let animation = true;
 
-  let button: HTMLButtonElement;
+  let button: HTMLElement;
 </script>
 
 <svelte:element

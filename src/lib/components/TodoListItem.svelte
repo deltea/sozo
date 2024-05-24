@@ -17,7 +17,7 @@
 
   function onChecked() {
     item.checked = !item.checked;
-    dispatch("checked");
+    dispatch("change");
   }
 
   function keydown(e: KeyboardEvent) {
@@ -29,12 +29,12 @@
         e.preventDefault();
         item.body = item.body.replace("!", "");
         item.important = !item.important;
-        dispatch("important");
+        dispatch("change");
       } else if (item.body.startsWith("?") || item.body.endsWith("?")) {
         e.preventDefault();
         item.body = item.body.replace("?", "");
         item.unsure = !item.unsure;
-        dispatch("unsure");
+        dispatch("change");
       }
     } else if (e.key === "Backspace" && item.body.length === 0 || e.key === "Delete") {
       dispatch("delete");

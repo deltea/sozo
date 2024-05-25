@@ -45,7 +45,7 @@
 <Button
   shadowSize="3px"
   class={cn(
-    "item rounded-2xl px-4 h-12 flex justify-between items-center w-96 text-black gap-2",
+    "item rounded-2xl px-4 h-12 flex justify-between items-center w-full text-black gap-2",
     { "text-opacity-20": item.checked },
   )}
 >

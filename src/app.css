@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  overflow: hidden;
-}
-
 .sortable-ghost {
   cursor: inherit;
   @apply !bg-white opacity-20;

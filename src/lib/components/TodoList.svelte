@@ -1,10 +1,10 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import Sortable from "sortablejs";
-  import { currentTheme } from "$lib/stores";
   import { flip } from "svelte/animate";
 
   import TodoListItem from "$components/TodoListItem.svelte";
+    import { cn } from "$lib/utils";
 
   let items = [
     { body: "Babooka", checked: true, important: false },
@@ -25,11 +25,22 @@
   ];
 
   let list: HTMLUListElement;
-  let autoSort = true;
+  let autoSort = false;
+  let scrollPosition: "bottom" | "middle" | "top" = "top";
 
   function order() {
     items = items.toSorted((a, b) => (b.important?1:-1) - (a.important?1:-1));
     items = items.toSorted((a, b) => (a.checked?1:-1) - (b.checked?1:-1));
+  }
+
+  function setScrollPosition(e: Event) {
+    if (list.scrollTop === 0) {
+      scrollPosition = "top";
+    } else if (list.scrollHeight - list.scrollTop - list.clientHeight < 1) {
+      scrollPosition = "bottom";
+    } else {
+      scrollPosition = "middle";
+    }
   }
 
   onMount(() => {
@@ -46,14 +57,25 @@
     });
 
     order();
+
+    list.addEventListener("scroll", setScrollPosition);
+
+    return () => {
+      list.removeEventListener("scroll", setScrollPosition);
+    }
   });
 </script>
 
 <ul
   bind:this={list}
   id="list"
-  class="h-full space-y-2 overflow-y-scroll border-3 rounded-3xl p-4"
-  style:border-color={$currentTheme}
+  class={cn(
+    "space-y-2 overflow-y-scroll border3 p4 py-2 rounded3xl h-full w-96 bg-white border-neutral-300",
+    {
+      "border-t-3": scrollPosition !== "top",
+      "border-b-3": scrollPosition !== "bottom",
+    }
+  )}
 >
   {#each items as item, index (item.body)}
     <li animate:flip={{ duration: 200 }} class="block">

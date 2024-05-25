@@ -6,14 +6,14 @@
   let className = "";
   export { className as class };
 
-  // interface $$Props extends HTMLButtonAttributes {
-  //   class?: string;
-  //   color?: string;
-  //   borderWidth?: string;
-  //   shadowSize?: string;
-  //   element?: string;
-  //   animation?: boolean;
-  // };
+  interface $$Props extends HTMLButtonAttributes {
+    class?: string;
+    color?: string;
+    borderWidth?: string;
+    shadowSize?: string;
+    element?: string;
+    animation?: boolean;
+  };
 
   export let color = "#ffffff";
   export let borderWidth = "2px";
@@ -42,7 +42,7 @@
     activeShadowSize: animation ? "0" : shadowSize,
   }}
   class={cn(
-    "px-8 py-3 rounded-2xl text-white font-nunito tracking-wider outline-none lowercase",
+    "px-8 py-3 rounded-2xl text-white font-nunito tracking-wider outline-none lowercase font-semibold",
     className,
   )}
 >

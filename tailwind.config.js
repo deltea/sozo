@@ -14,6 +14,9 @@ export default {
       },
       borderWidth: {
         "3": "3px"
+      },
+      spacing: {
+        "nav": "3.5rem",
       }
     },
   },

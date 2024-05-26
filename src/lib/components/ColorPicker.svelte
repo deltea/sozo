@@ -21,7 +21,7 @@
   class="w-60 cursor-auto p-6 flex flex-col items-center justify-center gap-6"
 >
   <Button
-    class="h-12 w-full flex justify-center items-center uppercase font-mono text-center"
+    class="h-12 w-full flex justify-center items-center uppercase font-mono text-center text-sm"
     color={$currentTheme}
     on:click={copyTheme}
   >{$currentTheme}</Button>

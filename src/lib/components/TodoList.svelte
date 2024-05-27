@@ -70,7 +70,7 @@
   bind:this={list}
   id="list"
   class={cn(
-    "space-y-2 overflow-y-scroll border3 p4 py-2 rounded3xl h-full w-96 bg-white border-neutral-300",
+    "space-y-2 overflow-y-scroll border3 p4 py-2 rounded3xl h-full w-96 border-neutral-300",
     {
       "border-t-3": scrollPosition !== "top",
       "border-b-3": scrollPosition !== "bottom",

@@ -10,14 +10,14 @@ export default {
     },
     extend: {
       colors: {
-        "black": "#222"
+        "black": "#222",
       },
       borderWidth: {
         "3": "3px"
       },
       spacing: {
         "nav": "3.5rem",
-      }
+      },
     },
   },
   plugins: [],

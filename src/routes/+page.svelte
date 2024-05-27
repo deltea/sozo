@@ -2,6 +2,7 @@
   import type { PageData } from "./$types";
 
   import { currentTheme } from "$lib/stores";
+  import { shadeColor } from "$lib/utils";
 
   import Button from "$components/Button.svelte";
   import ColorPicker from "$components/ColorPicker.svelte";

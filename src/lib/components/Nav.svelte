@@ -20,27 +20,28 @@
   <!-- svelte-ignore a11y-missing-content -->
   <a
     href="/"
-    class="size-6 border-[6px] rounded-full duration-150 hover:scale-110 active:scale-100"
+    class="size-8 border-[8px] rounded-full duration-150 hover:scale-110 active:scale-100"
     style:border-color={$currentTheme}
   ></a>
 
   <div class="flex items-center gap-1">
     <button
-      class="rounded-full size-9 flex justify-center items-center bg-white duration-150 group"
+      class="rounded-full size-9 flex justify-center items-center bg-white duration-150 group active:scale-90"
       id="navButton"
       use:cssVar={{ backgroundColor: shadeColor($currentTheme, 110) }}
       style:color={$currentTheme}
     >
       <iconify-icon
         icon="mingcute:settings-3-fill"
-        class="text-2xl group-hover:rotate-90 duration-150"
+        class="text-2xl group-hover:rotate-45 duration-150"
       ></iconify-icon>
     </button>
 
     <Button
       shadowSize="0"
-      class="font-bold text-sm px-4 py-1 rounded-full hover:scale-105 active:scale-100 duration-150"
+      class="font-bold text-sm px-4 py-1 rounded-full hover:scale-105 active:scale-100 duration-150 w-fit font-cursive max-w-80 text-ellipsis overflow-hidden whitespace-nowrap"
       color={$currentTheme}
+      contenteditable
     >
       My Project
     </Button>
@@ -50,6 +51,7 @@
     <DropdownMenu.Trigger class="flex justify-center items-center">
       <button
         class="rounded-full size-9 border-3 border-neutral-300 hover:scale-110 duration-150 active:scale-100 bg-cover bg-center"
+        style:border-color={$currentTheme}
         style:background-image="url('https://api.dicebear.com/8.x/thumbs/svg?seed={session?.user.id}')"
       ></button>
     </DropdownMenu.Trigger>

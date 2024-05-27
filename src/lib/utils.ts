@@ -58,6 +58,7 @@ export function toast(message: string, color: string) {
       primary: color,
       secondary: "#fff"
     },
-    style: "box-shadow: none; border-width: 2px; border-radius: 16px; padding: 8px 12px; font-family: 'Nunito Variable'"
+    style: "box-shadow: none; border-width: 2px; border-radius: 16px; padding: 8px 12px; font-family: 'Nunito Variable'",
+    position: "bottom-right",
   });
 }
